@@ -6,6 +6,8 @@ export type ProductCategory = {
   items: string[];
   /** Brand accent color (hex) used for the category card gradient. */
   color: string;
+  /** Photo for the category card. */
+  image: string;
 };
 
 /**
@@ -20,7 +22,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "From everyday mince to premium steakhouse cuts, our beef is selected for consistency, marbling, and flavour.",
     items: ["Ribeye & Sirloin", "Tenderloin", "Brisket & Chuck", "Minced Beef", "Bone-in Short Ribs"],
-    color: "#f25c54",
+    color: "#fc5454",
+    image: "/products/beef.jpg",
   },
   {
     slug: "lamb",
@@ -29,7 +32,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Whole carcasses and portioned cuts of lamb and mutton, ideal for grills, slow-cooking, and traditional dishes.",
     items: ["Lamb Chops", "Leg of Lamb", "Shoulder", "Lamb Mince", "Mutton Cuts"],
-    color: "#f7941d",
+    color: "#fc9018",
+    image: "/products/lamb.jpg",
   },
   {
     slug: "poultry",
@@ -38,7 +42,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Whole birds and portioned poultry, available fresh or frozen, prepared to your specification.",
     items: ["Whole Chicken", "Breast Fillet", "Thighs & Drumsticks", "Wings", "Marinated Cuts"],
-    color: "#6cc04a",
+    color: "#90cc48",
+    image: "/products/poultry.jpg",
   },
   {
     slug: "veal",
@@ -47,7 +52,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Premium veal cuts for refined menus — mild in flavour and tender in texture.",
     items: ["Veal Escalope", "Veal Shank (Osso Buco)", "Veal Chops", "Minced Veal"],
-    color: "#38a9c9",
+    color: "#48a8c0",
+    image: "/products/veal.jpg",
   },
   {
     slug: "processed",
@@ -56,7 +62,8 @@ export const productCategories: ProductCategory[] = [
     description:
       "Value-added, kitchen-ready products marinated and portioned to save your team prep time.",
     items: ["Kebabs & Skewers", "Burger Patties", "Sausages", "Marinated Mixes"],
-    color: "#3e6fb0",
+    color: "#4878b4",
+    image: "/products/processed.jpg",
   },
   {
     slug: "frozen",
@@ -65,6 +72,7 @@ export const productCategories: ProductCategory[] = [
     description:
       "Blast-frozen products handled through a strict cold chain to lock in quality and freshness.",
     items: ["Frozen Cuts", "Bulk Packs", "Portion-Controlled", "Wholesale Cases"],
-    color: "#f25c54",
+    color: "#fc9018",
+    image: "/products/frozen.jpg",
   },
 ];

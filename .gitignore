@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local reference assets
+IMG_1382.MP4
+public/cooking-alt.mp4
+Hero_for_website

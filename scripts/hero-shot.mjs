@@ -1,0 +1,14 @@
+import { chromium } from "playwright";
+const OUT = "C:/Users/elyas/Downloads/Claude_Website_MEC/shots";
+const browser = await chromium.launch({ args: ["--use-gl=angle","--use-angle=swiftshader","--ignore-gpu-blocklist"] });
+const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+const page = await ctx.newPage();
+page.on("pageerror", e => console.log("PAGEERROR:", e.message));
+page.on("console", m => { if (m.type()==="error") console.log("CONSOLE.ERR:", m.text()); });
+await page.goto("http://localhost:3000/", { waitUntil: "networkidle" });
+await new Promise(r=>setTimeout(r,6000));
+await page.screenshot({ path: `${OUT}/hero-3d-a.png` });
+await new Promise(r=>setTimeout(r,2500));
+await page.screenshot({ path: `${OUT}/hero-3d-b.png` });
+await browser.close();
+console.log("done");

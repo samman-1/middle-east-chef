@@ -16,12 +16,12 @@ export function ContactForm() {
 
   if (sent) {
     return (
-      <div className="flex flex-col items-center justify-center rounded-2xl border border-brand-green/30 bg-brand-green/5 p-10 text-center">
+      <div className="flex flex-col items-center justify-center rounded-2xl border border-brand-green/30 bg-brand-green/10 p-10 text-center">
         <span className="grid h-14 w-14 place-items-center rounded-full bg-brand-green text-white">
           <Check size={28} />
         </span>
-        <h3 className="mt-4 text-xl font-semibold text-slate-900">Thank you!</h3>
-        <p className="mt-2 max-w-sm text-sm text-slate-600">
+        <h3 className="mt-4 text-xl font-semibold text-stone-900">Thank you!</h3>
+        <p className="mt-2 max-w-sm text-sm text-stone-600">
           Your enquiry has been received. Our team will get back to you shortly.
         </p>
         <button

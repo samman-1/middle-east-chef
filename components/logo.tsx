@@ -22,7 +22,7 @@ export function Logo({
       <img
         src="/logo.png"
         alt="Middle East Chef"
-        className={`h-12 w-auto object-contain ${className}`}
+        className={`h-16 w-auto object-contain ${className}`}
         onError={() => setImgOk(false)}
       />
     );
