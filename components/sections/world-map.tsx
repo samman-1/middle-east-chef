@@ -39,7 +39,7 @@ export function WorldMap() {
         src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
         alt="World map"
         draggable={false}
-        className="pointer-events-none absolute inset-0 h-full w-full object-contain [mask-image:linear-gradient(to_bottom,transparent,white_12%,white_88%,transparent)]"
+        className="pointer-events-none absolute inset-0 h-full w-full object-fill [mask-image:linear-gradient(to_bottom,transparent,white_12%,white_88%,transparent)]"
       />
 
       <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full">
@@ -100,6 +100,12 @@ export function WorldMap() {
         const tx = xPct > 62 ? "calc(-100% - 8px)" : xPct < 32 ? "8px" : "-50%";
         const below = i % 2 === 1;
         const ty = below ? "12px" : "calc(-100% - 12px)";
+        // manual separation for the tightly-clustered Oceania pair
+        const nudge: Record<string, { dx: number; dy: number }> = {
+          "au-ryd": { dx: -40, dy: -14 },
+          "nz-dmm": { dx: 44, dy: 30 },
+        };
+        const { dx, dy } = nudge[p.id] ?? { dx: 0, dy: 0 };
         return (
           <motion.div
             key={p.id}
@@ -108,7 +114,11 @@ export function WorldMap() {
             viewport={{ once: true }}
             transition={{ delay: 0.7 + i * 0.18, duration: 0.45 }}
             className="absolute z-10 whitespace-nowrap rounded-full border border-white/15 bg-stone-900/90 px-2.5 py-1 text-[10px] font-semibold shadow-lg backdrop-blur sm:text-xs"
-            style={{ left: `${xPct}%`, top: `${yPct}%`, transform: `translate(${tx}, ${ty})` }}
+            style={{
+              left: `${xPct}%`,
+              top: `${yPct}%`,
+              transform: `translate(calc(${tx} + ${dx}px), calc(${ty} + ${dy}px))`,
+            }}
           >
             <span className="text-brand-orange">{p.originShort}</span>
             <span className="text-stone-500"> → </span>
