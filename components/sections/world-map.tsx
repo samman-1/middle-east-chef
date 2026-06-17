@@ -113,7 +113,7 @@ export function WorldMap() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.7 + i * 0.18, duration: 0.45 }}
-            className="absolute z-10 whitespace-nowrap rounded-full border border-white/15 bg-stone-900/90 px-2.5 py-1 text-[10px] font-semibold shadow-lg backdrop-blur sm:text-xs"
+            className="absolute z-10 hidden whitespace-nowrap rounded-full border border-white/15 bg-stone-900/90 px-2.5 py-1 text-[10px] font-semibold shadow-lg backdrop-blur sm:block sm:text-xs"
             style={{
               left: `${xPct}%`,
               top: `${yPct}%`,

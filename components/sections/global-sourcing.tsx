@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Plane } from "lucide-react";
 import { WorldMap } from "@/components/sections/world-map";
 import { CountUp } from "@/components/motion/count-up";
+import { routes } from "@/lib/sourcing";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -15,7 +16,7 @@ const stats = [
 
 export function GlobalSourcing() {
   return (
-    <section className="relative bg-stone-950 py-16 text-white">
+    <section className="relative overflow-hidden bg-stone-950 py-16 text-white">
       <div
         className="pointer-events-none absolute inset-0 opacity-70"
         style={{
@@ -64,6 +65,20 @@ export function GlobalSourcing() {
         {/* World map with labeled routes */}
         <div className="mx-auto mt-8 max-w-4xl">
           <WorldMap />
+        </div>
+
+        {/* Mobile route list (labels are hidden on the small map) */}
+        <div className="mx-auto mt-6 grid max-w-md grid-cols-2 gap-2 sm:hidden">
+          {routes.map((r) => (
+            <div
+              key={r.id}
+              className="flex items-center justify-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs"
+            >
+              <span className="font-semibold text-brand-orange">{r.originShort}</span>
+              <span className="text-stone-500">→</span>
+              <span className="text-brand-red">{r.destCity}</span>
+            </div>
+          ))}
         </div>
 
         {/* Stats */}
