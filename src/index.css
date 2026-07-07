@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  /* لوحة ألوان البورتفوليو — sampled from the MEC portfolio */
+  --color-cream: #f4efe6;
+  --color-cream-soft: #faf7f1;
+  --color-cream-deep: #ece4d6;
+  --color-ink: #1e1b17;
+  --color-ink-soft: #2a2621;
+  --color-muted: #6b635a;
+
+  /* color coding per Abu Saif's notes */
+  --color-potato: #c8881f; /* أصفر — البطاطس */
+  --color-meat: #c0392b;   /* أحمر — اللحوم */
+  --color-poultry: #b9543f;
+  --color-produce: #4e7a3f; /* أخضر — الخضار والفواكه */
+
+  --font-sans: "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-latin: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-ink antialiased;
+    font-family: var(--font-sans);
+  }
+  ::selection {
+    background: #1e1b17;
+    color: #f4efe6;
+  }
+}
+
+.font-latin {
+  font-family: var(--font-latin);
+}
+
+/* الشُرَط الملوّنة فوق الشعار */
+.brand-dashes::before {
+  content: "";
+  display: inline-block;
+  width: 4.5rem;
+  height: 6px;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    #c8881f 0 28%,
+    transparent 28% 36%,
+    #4e7a3f 36% 64%,
+    transparent 64% 72%,
+    #c0392b 72% 100%
+  );
+}
+
+/* wide tracking only on the Latin (uppercase) eyebrow labels;
+   Arabic is cursive/connected, so letter-spacing breaks the joins and looks gappy */
+.section-label.font-latin {
+  letter-spacing: 0.3em;
+}
