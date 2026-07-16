@@ -53,7 +53,7 @@ export function CategorySection({
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <span className="font-latin text-sm font-semibold section-label" style={{ color: cat.accent }}>
-                {String(index + 1).padStart(2, "0")} — {cat.en}
+                {String(index + 1).padStart(2, "0")} · {cat.en}
               </span>
               <h2 className="mt-3 text-4xl font-black tracking-tight text-ink sm:text-5xl">{cat.ar}</h2>
             </div>

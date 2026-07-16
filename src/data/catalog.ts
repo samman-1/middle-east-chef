@@ -94,7 +94,7 @@ export const categories: Category[] = [
     en: "Frozen Vegetables & Fruits",
     accent: "#4e7a3f",
     blurbAr:
-      "خضار وفواكه مجمّدة بمعايير تجارية — منتجات طازجة وعالية الجودة لقطاع خدمات الطعام والجملة، بالشراكة مع Damaco Group.",
+      "خضار وفواكه مجمّدة بمعايير تجارية، منتجات طازجة وعالية الجودة لقطاع خدمات الطعام والجملة، بالشراكة مع Damaco Group.",
     hero: "/pdf/veg-mixed.jpg",
     products: [
       { ar: "فواكه مجمّدة", en: "MANGO", img: "/pdf/fruit-mango.jpg" },
@@ -130,10 +130,10 @@ export const categories: Category[] = [
 export type Cut = { en: string; ar: string; note: string; x: number; y: number };
 export const cutReferences: Cut[] = [
   { en: "Shoulder", ar: "الكتف", note: "قطع غنية مناسبة للطهي البطيء والتصنيع.", x: 62, y: 40 },
-  { en: "Beef Tenderloin", ar: "فيليه البقر", note: "أنعم قطع اللحم البقري — طري ولذيذ.", x: 46, y: 37 },
+  { en: "Beef Tenderloin", ar: "فيليه البقر", note: "أنعم قطع اللحم البقري، طري ولذيذ.", x: 46, y: 37 },
   { en: "Veal Tenderloin", ar: "فيليه العجل", note: "فيليه العجل الطري، خيار راقٍ للقوائم المميّزة.", x: 53, y: 39 },
   { en: "Rump Steak", ar: "ستيك الردة", note: "قطع الردة الخالية من الدهون للشوي والتحمير.", x: 28, y: 39 },
-  { en: "Topside", ar: "الموزة الداخلية", note: "الموزة الداخلية — قطع رئيسية بمواصفات ثابتة.", x: 23, y: 49 },
+  { en: "Topside", ar: "الموزة الداخلية", note: "الموزة الداخلية، قطع رئيسية بمواصفات ثابتة.", x: 23, y: 49 },
   { en: "Thick Flank", ar: "الموزة الخارجية", note: "الموزة الخارجية، مثالية للتقطيع والتشغيل.", x: 29, y: 56 },
 ];
 

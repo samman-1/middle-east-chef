@@ -1,7 +1,7 @@
 export function Logo({ className = "h-10", withText = false }: { className?: string; withText?: boolean }) {
   return (
     <span className="inline-flex items-center gap-3">
-      <img src="/pdf/mec-mark-color.png" alt="MEC — طاهي الشرق الأوسط" className={className} />
+      <img src="/pdf/mec-mark-color.png" alt="MEC · طاهي الشرق الأوسط" className={className} />
       {withText && (
         <span className="leading-tight">
           <span className="block text-sm font-bold text-ink">طاهي الشرق الأوسط</span>

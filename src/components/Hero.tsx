@@ -15,10 +15,6 @@ export function Hero() {
         <div className="relative z-10">
           <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
             <Dashes />
-            <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-ink/10 bg-cream-soft px-4 py-1.5 text-xs font-bold text-muted">
-              <Snowflake size={14} className="text-produce" />
-              {company.taglineAr}
-            </span>
           </motion.div>
 
           <motion.h1

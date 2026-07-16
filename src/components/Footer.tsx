@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { company, categories } from "../data/catalog";
 import { Logo } from "./Logo";
 
@@ -19,7 +20,7 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5 text-sm text-ink/80">
               {categories.map((c) => (
                 <li key={c.id}>
-                  <a href={`#${c.id}`} className="hover:text-potato">{c.ar}</a>
+                  <Link to={`/#${c.id}`} className="hover:text-potato">{c.ar}</Link>
                 </li>
               ))}
             </ul>
@@ -38,9 +39,16 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-ink/10 pt-6 text-xs text-muted sm:flex-row">
-          <span>© ٢٠٢٦ {company.nameAr} · جميع الحقوق محفوظة</span>
-          <span className="font-latin">Middle East Chef — Frozen Food Import &amp; Distribution</span>
+        <div className="mt-12 flex flex-col gap-4 border-t border-ink/10 pt-6 text-xs text-muted">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 sm:justify-start">
+            <Link to="/privacy" className="font-semibold hover:text-potato">سياسة الخصوصية</Link>
+            <span className="text-ink/20">·</span>
+            <Link to="/terms" className="font-semibold hover:text-potato">الشروط والأحكام</Link>
+          </div>
+          <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
+            <span>© ٢٠٢٦ {company.nameAr} · جميع الحقوق محفوظة</span>
+            <span className="font-latin">Middle East Chef · Frozen Food Import &amp; Distribution</span>
+          </div>
         </div>
       </div>
     </footer>

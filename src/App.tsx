@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -11,13 +13,15 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { categories } from "./data/catalog";
 import { Reveal } from "./components/Reveal";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
+import { Terms } from "./pages/Terms";
 
 const extras: Record<string, React.ReactNode> = {
   potatoes: <Coverage />,
   meats: <CutReferences />,
 };
 
-export default function App() {
+function Home() {
   return (
     <>
       <Nav />
@@ -34,7 +38,7 @@ export default function App() {
                 منظومة متكاملة من الأغذية المجمّدة
               </h2>
               <p className="mt-4 text-lg text-muted">
-                من اللحوم المستوردة إلى البطاطس والخضار والفواكه والدواجن — ضمن منظومة توزيع واحدة.
+                من اللحوم المستوردة إلى البطاطس والخضار والفواكه والدواجن، ضمن منظومة توزيع واحدة.
               </p>
             </Reveal>
           </div>
@@ -50,6 +54,35 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+    </>
+  );
+}
+
+/** On navigation: scroll to a hash target if present, otherwise to the top. */
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+  return null;
+}
+
+export default function App() {
+  return (
+    <>
+      <ScrollManager />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
+      </Routes>
     </>
   );
 }

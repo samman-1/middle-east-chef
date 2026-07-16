@@ -59,3 +59,37 @@
 .section-label.font-latin {
   letter-spacing: 0.3em;
 }
+
+/* legal pages (privacy / terms) */
+.legal-body {
+  line-height: 1.95;
+  color: var(--color-muted);
+}
+.legal-body h2 {
+  margin-top: 2.25rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+.legal-body h2:first-child {
+  margin-top: 0;
+}
+.legal-body p {
+  margin-top: 0.85rem;
+}
+.legal-body ul {
+  margin-top: 0.85rem;
+  padding-inline-start: 1.35rem;
+  list-style: disc;
+}
+.legal-body li {
+  margin-top: 0.4rem;
+}
+.legal-body strong {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+.legal-body a {
+  color: var(--color-potato);
+  font-weight: 600;
+}
